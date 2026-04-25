@@ -1,47 +1,44 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box;
 }
 
 body {
     background-color: #000;
     overflow: hidden;
     font-family: 'Arial Black', sans-serif;
-    cursor: none;
 }
 
 .slider {
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; height: 100vh;
+    border: 10px solid #D4AF37;
     overflow: hidden;
 }
 
 .slides-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 700%; /* 7 ta sahifa bo'lgani uchun */
-    /* 60 soniya: Har bir sahifa uchun 10 soniya */
-    animation: slideVertical 60s cubic-bezier(0.85, 0, 0.15, 1) infinite;
+    height: 500%; /* 5 ta blok uchun */
+    animation: slideVertical 30s cubic-bezier(0.85, 0, 0.15, 1) infinite;
 }
 
 .menu-page {
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; height: 100vh;
     display: grid;
-    gap: 8px;
-    padding: 8px;
+    gap: 15px; /* Rasmlar orasidagi chiziq */
+    padding: 15px;
 }
 
-/* 3 talik Layout */
+/* --- SETKA SOZLAMALARI --- */
+.layout-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
 .layout-3 {
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 .layout-3 .big { grid-row: span 2; }
 
-/* 4 talik Layout */
 .layout-4 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -49,56 +46,46 @@ body {
 
 .food-card {
     position: relative;
-    width: 100%;
-    height: 100%;
+    border: 3px solid #D4AF37;
+    border-radius: 15px;
     overflow: hidden;
-    border: 2px solid #D4AF37;
-    border-radius: 8px;
 }
 
 .food-card img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
 }
 
 .info {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-    padding: 35px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    bottom: 0; left: 0; width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 40%, transparent);
+    padding: 30px;
 }
 
 .info h2 {
     color: #D4AF37;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
-    margin-bottom: 5px;
-    text-shadow: 2px 2px 10px #000;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px #000;
 }
 
 .price {
     font-size: 2.5rem;
     background: #D4AF37;
     color: #000;
-    padding: 4px 15px;
-    border-radius: 6px;
+    padding: 5px 20px;
+    border-radius: 10px;
     font-weight: 900;
 }
 
-/* 7 blok uchun animatsiya (100 / 7 = 14.285) */
+/* 5 blok uchun animatsiya (100 / 5 = 20) */
 @keyframes slideVertical {
-    0%, 12% { transform: translateY(0); }
-    14.28%, 26% { transform: translateY(-14.285%); }
-    28.57%, 40% { transform: translateY(-28.57%); }
-    42.85%, 54% { transform: translateY(-42.855%); }
-    57.14%, 68% { transform: translateY(-57.14%); }
-    71.42%, 83% { transform: translateY(-71.425%); }
-    85.71%, 98% { transform: translateY(-85.71%); }
-    100% { transform: translateY(-85.71%); }
+    0%, 15% { transform: translateY(0); }
+    20%, 35% { transform: translateY(-20%); }
+    40%, 55% { transform: translateY(-40%); }
+    60%, 75% { transform: translateY(-60%); }
+    80%, 95% { transform: translateY(-80%); }
+    100% { transform: translateY(-80%); }
 }
